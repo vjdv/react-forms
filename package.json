@@ -1,0 +1,23 @@
+{
+  "name": "@vjdv/react-forms",
+  "version": "0.0.1",
+  "description": "Another aproach to create forms in React with validations",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "keywords": [
+    "react",
+    "forms",
+    "input",
+    "select",
+    "controls",
+    "validations"
+  ],
+  "author": "vjdv",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
