@@ -37,7 +37,7 @@ function Form(props: FormInterface) {
   }
   //render
   return (
-    <FormProvider value={{ addValidator, removeValidator, wasSubmited, submitting, values: props.values, sm: props.sm, md: props.md, lg: props.lg, xl: props.xl, xxl: props.xxl }}>
+    <FormProvider value={{ addValidator, removeValidator, wasSubmited, submitting, state: props.state, sm: props.sm, md: props.md, lg: props.lg, xl: props.xl, xxl: props.xxl }}>
       <form onSubmit={submitHandler} className={props.className}>
         {props.children}
       </form>

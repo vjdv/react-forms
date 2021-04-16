@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ObjectState } from "./hooks/useobjectstate";
+import { FormState } from "./hooks/useformstate";
 
 export type BootstrapColSize = 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1;
 
@@ -10,7 +10,7 @@ export interface FormContextType {
   removeValidator: (validator: FormValidator) => void;
   wasSubmited: boolean;
   submitting: boolean;
-  values: ObjectState<any>;
+  state: FormState<any>;
   sm?: BootstrapColSize;
   md?: BootstrapColSize;
   lg?: BootstrapColSize;
@@ -24,7 +24,7 @@ export interface FormInterface {
   confirm: () => Promise<boolean>;
   onError: (error: Error) => void;
   onSubmit: () => void;
-  values: ObjectState<any>;
+  state: FormState<any>;
   sm?: BootstrapColSize;
   md?: BootstrapColSize;
   lg?: BootstrapColSize;

@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export type ObjectState<T> = [T, (k: string, v: any) => void, (o: T) => void];
+export type FormState<T> = [T, (k: string, v: any) => void, (o: T) => void];
 
-function useObjectState<T>(initialState: T): ObjectState<T> {
+function useFormState<T>(initialState: T): FormState<T> {
   const [state, setState] = useState(initialState);
   const setValue = (k: string, v: any) => {
     setState(oldstate => {
@@ -14,4 +14,4 @@ function useObjectState<T>(initialState: T): ObjectState<T> {
   return [state, setValue, setState];
 }
 
-export default useObjectState;
+export default useFormState;
