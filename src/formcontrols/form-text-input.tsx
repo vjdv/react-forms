@@ -10,7 +10,7 @@ export interface FormTextInputProps {
   autoFocus: boolean;
   className?: string;
   disabled?: boolean;
-  id: string;
+  id?: string;
   maxLength: number;
   name: string;
   onBlur?: () => void;

@@ -7,7 +7,7 @@ import FormValidation from "./form-validation";
 export interface FormSelectProps {
   className?: string;
   disabled: boolean;
-  id: string;
+  id?: string;
   labelField: string;
   name: string;
   options: any[];
