@@ -24,7 +24,7 @@ const defaultProps = {
   autoFocus: false,
   disabled: false,
   maxLength: 100,
-  required: false,
+  required: true,
   transforms: []
 };
 
