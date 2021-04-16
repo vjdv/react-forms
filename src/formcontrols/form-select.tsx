@@ -29,7 +29,7 @@ function FormSelect(props: FormSelectProps) {
   return (
     <>
       <Select
-        id={props.id}
+        id={props.id || props.name}
         className={props.className}
         value={value}
         style={props.style}

@@ -34,7 +34,7 @@ function FormTextInput(props: FormTextInputProps) {
   return (
     <>
       <TextInput
-        id={props.id}
+        id={props.id || props.name}
         className={props.className}
         value={value}
         onChange={setValue}
