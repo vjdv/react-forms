@@ -20,7 +20,7 @@ function FormValidation(props: FormValidationProps) {
     () =>
       Promise.resolve()
         .then(props.validator)
-        .then(o => {
+        .then((o) => {
           if (typeof o === "string") {
             if (o === "") return true;
             setWarning(o);
@@ -36,13 +36,21 @@ function FormValidation(props: FormValidationProps) {
     [props.validator]
   );
   //input listeners, remove warning on focus
+
   useEffect(() => {
     if (!props.htmlFor) return;
     const onFocus = () => setWarning("");
     const elements = document.querySelectorAll(props.htmlFor);
-    elements.forEach(e => e.addEventListener("focus", onFocus));
-    return () => elements.forEach(e => e.removeEventListener("focus", onFocus));
+    elements.forEach((e) => e.addEventListener("focus", onFocus));
+    return () => elements.forEach((e) => e.removeEventListener("focus", onFocus));
   }, [props.htmlFor]);
+  //estilo
+  useEffect(() => {
+    if (!props.htmlFor) return;
+    const elements = document.querySelectorAll(props.htmlFor);
+    if (warning === "") elements.forEach((e) => e.classList.remove("is-invalid"));
+    else elements.forEach((e) => e.classList.add("is-invalid"));
+  }, [warning]);
   //adds/removes validators from context
   useEffect(() => {
     formContext.addValidator(validator);

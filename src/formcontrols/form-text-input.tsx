@@ -47,7 +47,7 @@ function FormTextInput(props: FormTextInputProps) {
         autoFocus={props.autoFocus}
         required={false}
       />
-      {props.required && <FormValidation htmlFor={id} message="This field is required" validator={() => value !== ""} />}
+      {props.required && <FormValidation htmlFor={"#" + id} message="This field is required" validator={() => value !== ""} />}
     </>
   );
 }

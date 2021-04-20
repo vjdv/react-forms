@@ -40,7 +40,7 @@ function FormSelect(props: FormSelectProps) {
         labelField={props.labelField}
         valueField={props.valueField}
       />
-      {props.required && <FormValidation htmlFor={id} message="This field is required" validator={() => exists} />}
+      {props.required && <FormValidation htmlFor={"#" + id} message="This field is required" validator={() => exists} />}
     </>
   );
 }
