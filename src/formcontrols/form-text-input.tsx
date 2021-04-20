@@ -25,16 +25,17 @@ const defaultProps = {
   disabled: false,
   maxLength: 100,
   required: true,
-  transforms: []
+  transforms: [],
 };
 
 function FormTextInput(props: FormTextInputProps) {
   const [value, setValue] = useValue(props.name);
+  const id = props.id || props.name;
   //render
   return (
     <>
       <TextInput
-        id={props.id || props.name}
+        id={id}
         className={props.className}
         value={value}
         onChange={setValue}
@@ -46,7 +47,7 @@ function FormTextInput(props: FormTextInputProps) {
         autoFocus={props.autoFocus}
         required={false}
       />
-      {props.required && <FormValidation htmlFor={props.id} message="This field is required" validator={() => value !== ""} />}
+      {props.required && <FormValidation htmlFor={id} message="This field is required" validator={() => value !== ""} />}
     </>
   );
 }

@@ -20,16 +20,17 @@ const defaultProps = {
   disabled: false,
   labelField: "label",
   required: true,
-  valueField: "value"
+  valueField: "value",
 };
 
 function FormSelect(props: FormSelectProps) {
   const [value, setValue] = useValue(props.name);
-  const exists = useMemo(() => props.options.findIndex(o => o[props.valueField] === value) !== -1, [props.options, value]);
+  const exists = useMemo(() => props.options.findIndex((o) => o[props.valueField] === value) !== -1, [props.options, value]);
+  const id = props.id || props.name;
   return (
     <>
       <Select
-        id={props.id || props.name}
+        id={id}
         className={props.className}
         value={value}
         style={props.style}
@@ -39,7 +40,7 @@ function FormSelect(props: FormSelectProps) {
         labelField={props.labelField}
         valueField={props.valueField}
       />
-      {props.required && <FormValidation htmlFor={props.id} message="This field is required" validator={() => exists} />}
+      {props.required && <FormValidation htmlFor={id} message="This field is required" validator={() => exists} />}
     </>
   );
 }
