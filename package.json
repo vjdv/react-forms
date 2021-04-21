@@ -1,6 +1,6 @@
 {
   "name": "@vjdv/react-forms",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Another aproach to create forms in React with validations",
   "repository": {
     "type": "git",
